@@ -17,7 +17,7 @@
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
 
-              <router-link to="/" class="navbar-item is-active">Home</router-link>
+              <router-link to="/" class="navbar-item is-active">Pokemones</router-link>
               <router-link to="/about" class="navbar-item">About</router-link>
           </div>
         </div>

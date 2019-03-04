@@ -11,7 +11,7 @@
           <div class="card-content">
             <div class="media">
               <div class="media-content has-text-centered">
-                <p class="title is-4 is-uppercase">{{poke.name}}</p>
+                <p class="title is-4 is-capitalized">{{poke.name}}</p>
               </div>
             </div>
             <div class="has-text-centered">
@@ -19,6 +19,12 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column has-text-centered">
+        <hr>
+        <a class="button is-primary is-outlined is-large" v-on:click="cargarMas()">Ver Más</a>
       </div>
     </div>
 
@@ -33,13 +39,14 @@ export default {
   name: 'pokemons',
   data() {
     return {
-      pokes : ''
+      pokes : '',
+      next: ''
     }
   },
   created(){
-
     Axios.get('https://pokeapi.co/api/v2/pokemon').then(res=>{
       console.log(res);
+      this.next = res.data.next;
       this.pokes = res.data.results;
     })
 
@@ -50,6 +57,13 @@ export default {
     },
     ruta(nom){
       return '/pokemon/'+ nom;
+    },
+    cargarMas(){
+      Axios.get(this.next).then(res=>{
+        console.log(res);
+        this.next = res.data.next;
+        this.pokes = [...this.pokes, ...res.data.results];
+      })
     }
   }
 }

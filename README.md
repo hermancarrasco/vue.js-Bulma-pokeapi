@@ -1,4 +1,4 @@
-# pokeapi
+# Vue.js - Framework Bulma - Pokeapi.co
 
 ## Project setup
 ```

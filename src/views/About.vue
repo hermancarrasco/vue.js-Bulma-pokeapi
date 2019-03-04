@@ -1,5 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <br>
+    <p class="has-text-centered title">Prueba de Framework Bulma con Vue.js</p>
   </div>
 </template>

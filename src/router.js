@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import pokemon from './components/pokemon'
 
 Vue.use(Router)
 
@@ -12,6 +13,15 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/pokemon',
+      redirect: '/'
+    },
+    {
+    path: '/pokemon/:id',
+      name:'pokemonView',
+      component: pokemon
     },
     {
       path: '/about',
